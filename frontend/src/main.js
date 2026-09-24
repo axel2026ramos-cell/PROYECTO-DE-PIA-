@@ -1327,7 +1327,7 @@ const temperatureChart = new Chart(
 
 const chartThemes = {
   light: { text: '#334e68', ticks: '#52677d', grid: 'rgba(72, 104, 135, 0.18)' },
-  dark: { text: '#c3d2e3', ticks: '#8fa2ba', grid: 'rgba(143, 162, 186, 0.16)' }
+  dark: { text: '#f5f5f5', ticks: '#a3a3a3', grid: 'rgba(255, 255, 255, 0.1)' }
 }
 
 function applyTheme(theme) {

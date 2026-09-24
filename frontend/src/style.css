@@ -2631,17 +2631,18 @@ th {
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  background: #07111f;
+  color: #ffffff;
+  background: #000000;
 }
 
-:root[data-theme="dark"] body {
-  background:
-    radial-gradient(circle at 20% 0%, rgba(22, 101, 170, 0.22), transparent 35%),
-    #07111f;
+:root[data-theme="dark"] body,
+:root[data-theme="dark"] .app-shell {
+  color: #ffffff;
+  background: #000000;
 }
 
 :root[data-theme="dark"] .amef-scenario-card {
-  background: #0c1a2c;
+  background: #0d0d0d;
 }
 
 /* =====================================================
@@ -2723,4 +2724,421 @@ th {
   .visual-preview {
     transition: none;
   }
+}
+
+/* =====================================================
+   MODO NOCHE NEGRO (generado: tonos azul marino → negro y gris neutro)
+===================================================== */
+
+:where(:root[data-theme="dark"]) .subtitle,
+:where(:root[data-theme="dark"]) .panel-heading p {
+  color: #a0a0a0;
+}
+
+:where(:root[data-theme="dark"]) .system-status {
+  border: 1px solid #1c1c1c;
+  background: rgba(15, 15, 15, 0.88);
+}
+
+:where(:root[data-theme="dark"]) .system-status small,
+:where(:root[data-theme="dark"]) .decision-strip small,
+:where(:root[data-theme="dark"]) .simulation-time small {
+  color: #929292;
+}
+
+:where(:root[data-theme="dark"]) .panel {
+  border: 1px solid #191919;
+  background: rgba(12, 12, 12, 0.92);
+}
+
+:where(:root[data-theme="dark"]) .primary {
+  color: #090909;
+}
+
+:where(:root[data-theme="dark"]) .secondary {
+  color: #ffffff;
+  background: #1e1e1e;
+}
+
+:where(:root[data-theme="dark"]) .outline {
+  color: #c4c4c4;
+  border: 1px solid #464646;
+}
+
+:where(:root[data-theme="dark"]) .field-label {
+  color: #aeaeae;
+}
+
+:where(:root[data-theme="dark"]) select {
+  color: #ffffff;
+  border: 1px solid #434343;
+  background: #0f0f0f;
+}
+
+:where(:root[data-theme="dark"]) .automatic-control {
+  border-top: 1px solid #191919;
+}
+
+:where(:root[data-theme="dark"]) .automatic-control small {
+  color: #8f8f8f;
+}
+
+:where(:root[data-theme="dark"]) .slider {
+  background: #3f3f3f;
+}
+
+:where(:root[data-theme="dark"]) .simulation-time {
+  background: #0b0b0b;
+}
+
+:where(:root[data-theme="dark"]) .process-stage {
+  border: 1px solid #1e1e1e;
+  background:
+    linear-gradient(rgba(30, 30, 30, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 30, 30, 0.15) 1px, transparent 1px),
+    linear-gradient(180deg, #0f0f0f, #0a0a0a);
+}
+
+:where(:root[data-theme="dark"]) .machine-label {
+  color: #7d7d7d;
+}
+
+:where(:root[data-theme="dark"]) .spool::before,
+:where(:root[data-theme="dark"]) .spool::after {
+  background: #a5a5a5;
+}
+
+:where(:root[data-theme="dark"]) .spool-core {
+  background: #3f3f3f;
+}
+
+:where(:root[data-theme="dark"]) .roller {
+  border: 6px solid #8a8a8a;
+  background: #141414;
+}
+
+:where(:root[data-theme="dark"]) .tension-sensor {
+  background: #141414;
+}
+
+:where(:root[data-theme="dark"]) .weaving-unit {
+  border: 2px solid #5c5c5c;
+  background: #131313;
+}
+
+:where(:root[data-theme="dark"]) .weaving-wheel {
+  border: 9px dashed #838383;
+}
+
+:where(:root[data-theme="dark"]) .thread {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+:where(:root[data-theme="dark"]) .decision-strip > div {
+  background: #0b0b0b;
+}
+
+:where(:root[data-theme="dark"]) .sensor-card {
+  border: 1px solid #1e1e1e;
+  background: #0d0d0d;
+}
+
+:where(:root[data-theme="dark"]) .sensor-icon {
+  background: #161616;
+}
+
+:where(:root[data-theme="dark"]) .sensor-card small {
+  color: #929292;
+}
+
+:where(:root[data-theme="dark"]) .sensor-card p {
+  color: #828282;
+}
+
+:where(:root[data-theme="dark"]) th,
+:where(:root[data-theme="dark"]) td {
+  border-bottom: 1px solid #191919;
+}
+
+:where(:root[data-theme="dark"]) th {
+  color: #8d8d8d;
+}
+
+:where(:root[data-theme="dark"]) .empty-row td {
+  color: #828282;
+}
+
+:where(:root[data-theme="dark"]) .event-main {
+  color: #ffffff;
+}
+
+:where(:root[data-theme="dark"]) .event-sub {
+  color: #8d8d8d;
+}
+
+:where(:root[data-theme="dark"]) .chart-card {
+  border: 1px solid #1e1e1e;
+  background: #0b0b0b;
+}
+
+:where(:root[data-theme="dark"]) .chart-header small {
+  color: #828282;
+}
+
+:where(:root[data-theme="dark"]) .metric-card {
+  border: 1px solid #1e1e1e;
+  background: #0b0b0b;
+}
+
+:where(:root[data-theme="dark"]) .metric-card small {
+  color: #919191;
+}
+
+:where(:root[data-theme="dark"]) .metric-card p {
+  color: #797979;
+}
+
+:where(:root[data-theme="dark"]) .metrics-actions {
+  border-top: 1px solid #191919;
+}
+
+:where(:root[data-theme="dark"]) .metrics-actions p {
+  color: #828282;
+}
+
+:where(:root[data-theme="dark"]) .export-button {
+  color: #090909;
+}
+
+:where(:root[data-theme="dark"]) .data-origin-badge {
+  border: 1px solid #464646;
+  color: #aeaeae;
+  background: #0d0d0d;
+}
+
+:where(:root[data-theme="dark"]) .machine-selector-card,
+:where(:root[data-theme="dark"]) .historical-kpi-card {
+  border: 1px solid #1e1e1e;
+  background: #0b0b0b;
+}
+
+:where(:root[data-theme="dark"]) .machine-description small,
+:where(:root[data-theme="dark"]) .historical-kpi-card small,
+:where(:root[data-theme="dark"]) .baseline-strip small {
+  color: #919191;
+}
+
+:where(:root[data-theme="dark"]) .historical-kpi-card p {
+  color: #797979;
+}
+
+:where(:root[data-theme="dark"]) .baseline-strip > div {
+  background: #0d0d0d;
+}
+
+:where(:root[data-theme="dark"]) .synthetic-warning {
+  color: #acacac;
+}
+
+:where(:root[data-theme="dark"]) .amef-scenario-card {
+  border: 1px solid #3c3c3c;
+}
+
+:where(:root[data-theme="dark"]) .amef-title {
+  border-bottom: 1px solid #191919;
+}
+
+:where(:root[data-theme="dark"]) .amef-data-grid small,
+:where(:root[data-theme="dark"]) .amef-action small {
+  color: #858585;
+}
+
+:where(:root[data-theme="dark"]) .amef-data-grid strong,
+:where(:root[data-theme="dark"]) .amef-action strong {
+  color: #ffffff;
+}
+
+:where(:root[data-theme="dark"]) .amef-action {
+  border-top: 1px solid #191919;
+}
+
+:where(:root[data-theme="dark"]) .visual-preview {
+  border: 1px solid #1d1d1d;
+  background:
+    linear-gradient(rgba(56, 189, 248, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.035) 1px, transparent 1px),
+    #0b0b0b;
+}
+
+:where(:root[data-theme="dark"]) .visual-placeholder {
+  color: #a1a1a1;
+}
+
+:where(:root[data-theme="dark"]) .visual-placeholder strong {
+  color: #ffffff;
+}
+
+:where(:root[data-theme="dark"]) .inspection-roi {
+  box-shadow: 0 0 0 999px rgba(4, 4, 4, 0.12);
+}
+
+:where(:root[data-theme="dark"]) .inspection-roi span {
+  color: #ffffff;
+}
+
+:where(:root[data-theme="dark"]) .visual-scope-note,
+:where(:root[data-theme="dark"]) .visual-disclaimer {
+  color: #8d8d8d;
+}
+
+:where(:root[data-theme="dark"]) .visual-controls {
+  border: 1px solid #1d1d1d;
+  background: #0d0d0d;
+}
+
+:where(:root[data-theme="dark"]) .visual-controls label:not(.file-button) {
+  color: #9d9d9d;
+}
+
+:where(:root[data-theme="dark"]) .api-status {
+  border: 1px solid #3d3d3d;
+  background: #0b0b0b;
+  color: #aeaeae;
+}
+
+:where(:root[data-theme="dark"]) .yolo-box span {
+  color: #ffffff;
+}
+
+:where(:root[data-theme="dark"]) .visual-analyze-button {
+  color: #080808;
+}
+
+:where(:root[data-theme="dark"]) .visual-result {
+  border: 1px solid #1f1f1f;
+  background: #0b0b0b;
+}
+
+:where(:root[data-theme="dark"]) .visual-result small {
+  color: #8d8d8d;
+}
+
+:where(:root[data-theme="dark"]) .visual-result strong {
+  color: #ffffff;
+}
+
+:where(:root[data-theme="dark"]) .visual-result p {
+  color: #a1a1a1;
+}
+
+:where(:root[data-theme="dark"]) .risk-summary-card,
+:where(:root[data-theme="dark"]) .risk-detail-card,
+:where(:root[data-theme="dark"]) .risk-probability-card,
+:where(:root[data-theme="dark"]) .risk-action-card {
+  border: 1px solid #1e1e1e;
+  background: #0b0b0b;
+}
+
+:where(:root[data-theme="dark"]) .risk-summary-card small,
+:where(:root[data-theme="dark"]) .risk-probability-card > small,
+:where(:root[data-theme="dark"]) .risk-action-card > small {
+  color: #8d8d8d;
+}
+
+:where(:root[data-theme="dark"]) .risk-summary-card > p,
+:where(:root[data-theme="dark"]) .risk-action-card p {
+  color: #a1a1a1;
+}
+
+:where(:root[data-theme="dark"]) .risk-detail-card div {
+  border-bottom: 1px solid #191919;
+}
+
+:where(:root[data-theme="dark"]) .risk-detail-card span {
+  color: #8d8d8d;
+}
+
+:where(:root[data-theme="dark"]) .risk-detail-card strong {
+  color: #ffffff;
+}
+
+:where(:root[data-theme="dark"]) .risk-probability-row {
+  color: #a3a3a3;
+}
+
+:where(:root[data-theme="dark"]) .risk-probability-row strong {
+  color: #ffffff;
+}
+
+:where(:root[data-theme="dark"]) .risk-action-card > span {
+  color: #797979;
+}
+
+:where(:root[data-theme="dark"]) .decision-evidence-card,
+:where(:root[data-theme="dark"]) .decision-output-card {
+  border: 1px solid #1e1e1e;
+  background: #0b0b0b;
+}
+
+:where(:root[data-theme="dark"]) .decision-evidence-card small,
+:where(:root[data-theme="dark"]) .decision-output-card small {
+  color: #8d8d8d;
+}
+
+:where(:root[data-theme="dark"]) .decision-evidence-card p,
+:where(:root[data-theme="dark"]) .decision-output-card p {
+  color: #a1a1a1;
+}
+
+:where(:root[data-theme="dark"]) .decision-output-card > span {
+  color: #797979;
+}
+
+:where(:root[data-theme="dark"]) .autonomous-control-card {
+  background: rgba(10, 10, 10, 0.55);
+}
+
+:where(:root[data-theme="dark"]) .autonomous-check {
+  color: #adadad;
+}
+
+:where(:root[data-theme="dark"]) .autonomous-status-row {
+  border-top: 1px solid rgba(155, 155, 155, 0.18);
+}
+
+:where(:root[data-theme="dark"]) .visual-batch-card {
+  background: rgba(12, 12, 12, 0.72);
+}
+
+:where(:root[data-theme="dark"]) .visual-batch-heading small,
+:where(:root[data-theme="dark"]) .visual-batch-card > label {
+  color: #9b9b9b;
+}
+
+:where(:root[data-theme="dark"]) .visual-batch-heading strong {
+  color: #ffffff;
+}
+
+:where(:root[data-theme="dark"]) .visual-batch-counters {
+  border-top: 1px solid rgba(155, 155, 155, 0.18);
+  color: #a1a1a1;
+}
+
+:where(:root[data-theme="dark"]) .visual-batch-counters strong {
+  color: #ffffff;
+}
+
+:where(:root[data-theme="dark"]) .theme-toggle {
+  border: 1px solid #1c1c1c;
+  color: #ffffff;
+  background: rgba(15, 15, 15, 0.88);
+}
+
+:root[data-theme="dark"] .amef-scenario-card {
+  background: #070707;
+}
+
+:where(:root[data-theme="dark"]) .visual-drop-hint {
+  color: #ffffff;
+  background: rgba(11, 11, 11, 0.95);
 }
