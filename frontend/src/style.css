@@ -2643,3 +2643,84 @@ th {
 :root[data-theme="dark"] .amef-scenario-card {
   background: #0c1a2c;
 }
+
+/* =====================================================
+   INSPECCIÓN VISUAL: ARRASTRAR Y SOLTAR
+===================================================== */
+
+.visual-preview {
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.visual-preview:has(.visual-placeholder:not(.hidden)) {
+  border-style: dashed;
+  border-width: 2px;
+  cursor: pointer;
+}
+
+.visual-preview:has(.visual-placeholder:not(.hidden)):hover {
+  border-color: #38bdf8;
+}
+
+.visual-placeholder {
+  padding: 16px;
+}
+
+
+.visual-upload-icon {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 4px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  color: #38bdf8;
+}
+
+.visual-drop-hint {
+  position: absolute;
+  inset: 10px;
+  z-index: 6;
+  display: none;
+  place-items: center;
+  border: 2px dashed #38bdf8;
+  border-radius: 12px;
+  color: #e0f2fe;
+  background: rgba(7, 21, 36, 0.95);
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  pointer-events: none;
+}
+
+.visual-preview.drag-over {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.2);
+}
+
+.visual-preview.drag-over .visual-drop-hint {
+  display: grid;
+}
+
+:where(:root:not([data-theme="dark"])) .visual-preview.drag-over {
+  border-color: #0284c7;
+  box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.15);
+}
+
+:where(:root:not([data-theme="dark"])) .visual-drop-hint {
+  border-color: #0284c7;
+  color: #075985;
+  background: rgba(240, 249, 255, 0.96);
+}
+
+:where(:root:not([data-theme="dark"])) .visual-upload-icon {
+  color: #0284c7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .visual-preview {
+    transition: none;
+  }
+}

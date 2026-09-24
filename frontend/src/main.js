@@ -450,14 +450,19 @@ document.querySelector('#app').innerHTML = `
         <div class="visual-viewer">
           <div class="visual-preview" id="visualPreview">
             <div class="visual-placeholder" id="visualPlaceholder">
-              <strong>Cargar fotografía de una media</strong>
-              <span>Formatos admitidos: JPG, JPEG y PNG</span>
+              <svg class="visual-upload-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 15V4m0 0L7.5 8.5M12 4l4.5 4.5" />
+                <path d="M4 14v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4" />
+              </svg>
+              <strong>Arrastra aquí la fotografía de una media</strong>
+              <span>o haz clic para buscarla · JPG, JPEG y PNG · puedes soltar varias</span>
             </div>
             <img id="visualImage" alt="Media seleccionada para inspección">
             <div class="inspection-roi" id="inspectionRoi">
               <span>REGIÓN INSPECCIONABLE</span>
             </div>
             <div class="yolo-detection-layer" id="yoloDetectionLayer"></div>
+            <div class="visual-drop-hint" aria-hidden="true">Suelta la(s) fotografía(s) para cargarla(s)</div>
           </div>
 
           <p class="visual-scope-note">
@@ -865,6 +870,7 @@ const elements = {
     '#amefRecommendedAction'
   ),
   visualImageInput: document.querySelector('#visualImageInput'),
+  visualPreview: document.querySelector('#visualPreview'),
   visualImage: document.querySelector('#visualImage'),
   visualPlaceholder: document.querySelector('#visualPlaceholder'),
   inspectionRoi: document.querySelector('#inspectionRoi'),
@@ -2349,9 +2355,25 @@ function displayVisualFile(file) {
     'Pulsa Analizar con YOLOv8n para ejecutar la inferencia local.'
 }
 
+const ACCEPTED_IMAGE_TYPES = ['image/jpeg', 'image/png']
+
 function loadVisualImage(event) {
-  const files = [...event.target.files]
-  if (!files.length) return
+  loadVisualFiles([...event.target.files])
+  event.target.value = ''
+}
+
+function loadVisualFiles(droppedFiles) {
+  const files = droppedFiles.filter(file => ACCEPTED_IMAGE_TYPES.includes(file.type))
+  const rejected = droppedFiles.length - files.length
+
+  if (!files.length) {
+    if (rejected) {
+      elements.visualResultStatus.textContent = 'Formato no admitido'
+      elements.visualResultDetail.textContent =
+        'Solo se pueden cargar fotografías JPG, JPEG o PNG.'
+    }
+    return
+  }
 
   stopVisualBatch('Lote preparado')
   visualBatchFiles = files
@@ -2365,6 +2387,54 @@ function loadVisualImage(event) {
     files.length === 1 ? '1 fotografía preparada' : `${files.length} fotografías preparadas`
   elements.visualBatchStart.disabled = !yoloApiAvailable
   displayVisualFile(files[0])
+
+  if (rejected) {
+    elements.visualBatchStatus.textContent +=
+      ` · ${rejected} archivo(s) omitido(s) por formato`
+  }
+}
+
+function setupVisualDropZone() {
+  const zone = elements.visualPreview
+  let dragDepth = 0
+  const hasFiles = event => [...(event.dataTransfer?.types ?? [])].includes('Files')
+
+  zone.addEventListener('dragenter', event => {
+    if (!hasFiles(event)) return
+    event.preventDefault()
+    dragDepth += 1
+    zone.classList.add('drag-over')
+  })
+
+  zone.addEventListener('dragover', event => {
+    if (!hasFiles(event)) return
+    event.preventDefault()
+    event.dataTransfer.dropEffect = 'copy'
+  })
+
+  zone.addEventListener('dragleave', () => {
+    dragDepth = Math.max(0, dragDepth - 1)
+    if (!dragDepth) zone.classList.remove('drag-over')
+  })
+
+  zone.addEventListener('drop', event => {
+    event.preventDefault()
+    dragDepth = 0
+    zone.classList.remove('drag-over')
+    if (visualBatchRunning) return
+    loadVisualFiles([...event.dataTransfer.files])
+  })
+
+  zone.addEventListener('click', () => {
+    if (!visualImageFile) elements.visualImageInput.click()
+  })
+
+  // Evita que el navegador abra la imagen si se suelta fuera del recuadro.
+  for (const type of ['dragover', 'drop']) {
+    window.addEventListener(type, event => {
+      if (hasFiles(event) && !zone.contains(event.target)) event.preventDefault()
+    })
+  }
 }
 
 function stopVisualBatch(status = 'Lote pausado') {
@@ -2920,6 +2990,7 @@ elements.applyScenarioButton.addEventListener('click', applyScenario)
 elements.exportButton.addEventListener('click', exportCsv)
 elements.clearHistoryButton.addEventListener('click', clearEventHistory)
 elements.visualImageInput.addEventListener('change', loadVisualImage)
+setupVisualDropZone()
 elements.visualConfidence.addEventListener('input', updateVisualConfidence)
 elements.visualAnalyzeButton.addEventListener('click', evaluateVisualImage)
 elements.visualBatchStart.addEventListener('click', startVisualBatch)
