@@ -1,0 +1,8 @@
+path: dataset
+train: images/train
+val: images/val
+
+names:
+  0: D04_defecto_elastico
+  1: D06_mancha_aceite
+  2: D09_tejido_incorrecto_parcial

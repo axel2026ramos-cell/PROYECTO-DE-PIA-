@@ -1,0 +1,10 @@
+ultralytics
+opencv-python
+fastapi
+uvicorn[standard]
+python-multipart
+numpy
+pandas
+pillow
+joblib
+scikit-learn==1.8.0
