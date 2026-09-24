@@ -1,5 +1,6 @@
 import './style.css'
 import Chart from 'chart.js/auto'
+import { apiFetch } from './localApi.js'
 
 document.querySelector('#app').innerHTML = `
   <div class="app-shell">
@@ -937,12 +938,12 @@ function formatDecimal(value, decimals = 2) {
 async function loadDicapriData() {
   try {
 const responses = await Promise.all([
-  fetch('/data/maquinas.json'),
-  fetch('/data/kpi_maquinas.json'),
-  fetch('/data/linea_base.json'),
-  fetch('/data/pareto_defectos_ordenado.json'),
-  fetch('/data/fallas_amef.json'),
-  fetch('/data/defectos_causas.json')
+  fetch(import.meta.env.BASE_URL + 'data/maquinas.json'),
+  fetch(import.meta.env.BASE_URL + 'data/kpi_maquinas.json'),
+  fetch(import.meta.env.BASE_URL + 'data/linea_base.json'),
+  fetch(import.meta.env.BASE_URL + 'data/pareto_defectos_ordenado.json'),
+  fetch(import.meta.env.BASE_URL + 'data/fallas_amef.json'),
+  fetch(import.meta.env.BASE_URL + 'data/defectos_causas.json')
 ])
 
     if (responses.some(response => !response.ok)) {
@@ -1985,7 +1986,7 @@ let visualInferenceInProgress = false
 
 async function checkYoloApi() {
   try {
-    const response = await fetch(`${YOLO_API_URL}/health`)
+    const response = await apiFetch(`${YOLO_API_URL}/health`)
     if (!response.ok) throw new Error('API no disponible')
 
     const data = await response.json()
@@ -1999,7 +2000,7 @@ async function checkYoloApi() {
     riskModelAvailable = false
     elements.yoloApiStatus.className = 'api-status offline'
     elements.yoloApiStatus.querySelector('strong').textContent =
-      'API YOLO desconectada · inicia FastAPI en el puerto 8000'
+      'Modelo YOLO no disponible · recarga la página'
   }
 
   elements.visualAnalyzeButton.disabled =
@@ -2187,7 +2188,7 @@ async function evaluateMachineRisk() {
     'Random Forest está analizando el historial mensual de la máquina.'
 
   try {
-    const response = await fetch(`${YOLO_API_URL}/risk/${machineId}`)
+    const response = await apiFetch(`${YOLO_API_URL}/risk/${machineId}`)
     if (!response.ok) {
       const detail = await response.text()
       throw new Error(detail || 'No se pudo ejecutar la predicción')
@@ -2272,7 +2273,7 @@ async function evaluateMachineRisk() {
     elements.riskSummaryCard.className = 'risk-summary-card risk-error'
     elements.riskLevel.textContent = 'Error de conexión'
     elements.riskScope.textContent =
-      'Verifica que FastAPI esté ejecutándose y que Random Forest esté cargado.'
+      'No se pudo leer la predicción de riesgo. Recarga la página.'
     await checkYoloApi()
   } finally {
     elements.riskAnalyzeButton.textContent = 'Evaluar con Random Forest'
@@ -2458,14 +2459,14 @@ async function evaluateVisualImage() {
   elements.visualAnalyzeButton.textContent = 'Analizando...'
   elements.visualResultStatus.textContent = 'Inferencia en curso'
   elements.visualResultDetail.textContent =
-    'Python está procesando la fotografía con YOLOv8n.'
+    'El navegador está procesando la fotografía con YOLOv8n.'
 
   try {
     const threshold = Number(elements.visualConfidence.value) / 100
     const formData = new FormData()
     formData.append('file', visualImageFile)
 
-    const response = await fetch(
+    const response = await apiFetch(
       `${YOLO_API_URL}/predict?conf=${threshold}`,
       { method: 'POST', body: formData }
     )
@@ -2571,7 +2572,7 @@ async function evaluateVisualImage() {
     elements.visualResult.className = 'visual-result nonconforming'
     elements.visualResultStatus.textContent = 'Error de conexión'
     elements.visualResultDetail.textContent =
-      'No fue posible comunicarse con la API YOLO. Verifica que FastAPI continúe ejecutándose.'
+      'No fue posible ejecutar el modelo YOLO en el navegador. Recarga la página.'
     await checkYoloApi()
     return null
   } finally {

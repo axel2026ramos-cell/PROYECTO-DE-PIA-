@@ -1,0 +1,771 @@
+{
+ "health": {
+  "status": "ok",
+  "model_loaded": true,
+  "model": "YOLOv8n preliminar Dicapri",
+  "classes": [
+   "D04_defecto_elastico",
+   "D06_mancha_aceite",
+   "D09_tejido_incorrecto_parcial"
+  ],
+  "risk_model_loaded": true,
+  "risk_model": "Random Forest preliminar Dicapri",
+  "risk_classes": [
+   "alto",
+   "bajo",
+   "medio"
+  ]
+ },
+ "risk": {
+  "M01": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M01",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "bajo",
+   "confidence": 0.6283,
+   "probabilities": {
+    "alto": 0.0482,
+    "bajo": 0.6283,
+    "medio": 0.3234
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Mantener operación y supervisión periódica",
+   "input_summary": {
+    "total_events": 64,
+    "unplanned_downtime_min": 169.36,
+    "defect_rate": 0.0208,
+    "recurrences": 1
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M02": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M02",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "medio",
+   "confidence": 0.5054,
+   "probabilities": {
+    "alto": 0.0821,
+    "bajo": 0.4126,
+    "medio": 0.5054
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Programar inspección preventiva y revisar la falla predominante",
+   "input_summary": {
+    "total_events": 83,
+    "unplanned_downtime_min": 210.13,
+    "defect_rate": 0.022,
+    "recurrences": 3
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M03": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M03",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "medio",
+   "confidence": 0.4713,
+   "probabilities": {
+    "alto": 0.1411,
+    "bajo": 0.3876,
+    "medio": 0.4713
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Programar inspección preventiva y revisar la falla predominante",
+   "input_summary": {
+    "total_events": 77,
+    "unplanned_downtime_min": 241.26,
+    "defect_rate": 0.0294,
+    "recurrences": 2
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M04": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M04",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "medio",
+   "confidence": 0.416,
+   "probabilities": {
+    "alto": 0.4108,
+    "bajo": 0.1733,
+    "medio": 0.416
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Programar inspección preventiva y revisar la falla predominante",
+   "input_summary": {
+    "total_events": 98,
+    "unplanned_downtime_min": 248.81,
+    "defect_rate": 0.0332,
+    "recurrences": 3
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M05": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M05",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "medio",
+   "confidence": 0.5951,
+   "probabilities": {
+    "alto": 0.2406,
+    "bajo": 0.1643,
+    "medio": 0.5951
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Programar inspección preventiva y revisar la falla predominante",
+   "input_summary": {
+    "total_events": 90,
+    "unplanned_downtime_min": 270.87,
+    "defect_rate": 0.0328,
+    "recurrences": 2
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M06": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M06",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "medio",
+   "confidence": 0.4838,
+   "probabilities": {
+    "alto": 0.3051,
+    "bajo": 0.2111,
+    "medio": 0.4838
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Programar inspección preventiva y revisar la falla predominante",
+   "input_summary": {
+    "total_events": 93,
+    "unplanned_downtime_min": 272.09,
+    "defect_rate": 0.0292,
+    "recurrences": 2
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M07": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M07",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "bajo",
+   "confidence": 0.5511,
+   "probabilities": {
+    "alto": 0.1152,
+    "bajo": 0.5511,
+    "medio": 0.3338
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Mantener operación y supervisión periódica",
+   "input_summary": {
+    "total_events": 76,
+    "unplanned_downtime_min": 307.39,
+    "defect_rate": 0.0227,
+    "recurrences": 2
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M08": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M08",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "alto",
+   "confidence": 0.4289,
+   "probabilities": {
+    "alto": 0.4289,
+    "bajo": 0.1625,
+    "medio": 0.4086
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Priorizar mantenimiento preventivo antes del siguiente periodo operativo",
+   "input_summary": {
+    "total_events": 92,
+    "unplanned_downtime_min": 336.28,
+    "defect_rate": 0.0358,
+    "recurrences": 4
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M09": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M09",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "medio",
+   "confidence": 0.5297,
+   "probabilities": {
+    "alto": 0.2213,
+    "bajo": 0.2491,
+    "medio": 0.5297
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Programar inspección preventiva y revisar la falla predominante",
+   "input_summary": {
+    "total_events": 88,
+    "unplanned_downtime_min": 331.05,
+    "defect_rate": 0.0285,
+    "recurrences": 2
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M10": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M10",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "medio",
+   "confidence": 0.4858,
+   "probabilities": {
+    "alto": 0.2426,
+    "bajo": 0.2716,
+    "medio": 0.4858
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Programar inspección preventiva y revisar la falla predominante",
+   "input_summary": {
+    "total_events": 86,
+    "unplanned_downtime_min": 434.44,
+    "defect_rate": 0.0324,
+    "recurrences": 3
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M11": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M11",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "alto",
+   "confidence": 0.9351,
+   "probabilities": {
+    "alto": 0.9351,
+    "bajo": 0.0206,
+    "medio": 0.0444
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Priorizar mantenimiento preventivo antes del siguiente periodo operativo",
+   "input_summary": {
+    "total_events": 117,
+    "unplanned_downtime_min": 298.53,
+    "defect_rate": 0.0469,
+    "recurrences": 4
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M12": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M12",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "bajo",
+   "confidence": 0.6739,
+   "probabilities": {
+    "alto": 0.041,
+    "bajo": 0.6739,
+    "medio": 0.2851
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Mantener operación y supervisión periódica",
+   "input_summary": {
+    "total_events": 68,
+    "unplanned_downtime_min": 217.49,
+    "defect_rate": 0.0183,
+    "recurrences": 1
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M13": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M13",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "medio",
+   "confidence": 0.4641,
+   "probabilities": {
+    "alto": 0.2385,
+    "bajo": 0.2974,
+    "medio": 0.4641
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Programar inspección preventiva y revisar la falla predominante",
+   "input_summary": {
+    "total_events": 87,
+    "unplanned_downtime_min": 163.23,
+    "defect_rate": 0.0337,
+    "recurrences": 2
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M14": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M14",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "alto",
+   "confidence": 0.731,
+   "probabilities": {
+    "alto": 0.731,
+    "bajo": 0.063,
+    "medio": 0.206
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Priorizar mantenimiento preventivo antes del siguiente periodo operativo",
+   "input_summary": {
+    "total_events": 110,
+    "unplanned_downtime_min": 251.9,
+    "defect_rate": 0.0405,
+    "recurrences": 3
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M15": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M15",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "medio",
+   "confidence": 0.5182,
+   "probabilities": {
+    "alto": 0.1901,
+    "bajo": 0.2917,
+    "medio": 0.5182
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Programar inspección preventiva y revisar la falla predominante",
+   "input_summary": {
+    "total_events": 82,
+    "unplanned_downtime_min": 288.27,
+    "defect_rate": 0.0273,
+    "recurrences": 2
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M16": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M16",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "medio",
+   "confidence": 0.6489,
+   "probabilities": {
+    "alto": 0.1149,
+    "bajo": 0.2362,
+    "medio": 0.6489
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Programar inspección preventiva y revisar la falla predominante",
+   "input_summary": {
+    "total_events": 83,
+    "unplanned_downtime_min": 169.16,
+    "defect_rate": 0.0259,
+    "recurrences": 2
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M17": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M17",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "medio",
+   "confidence": 0.4907,
+   "probabilities": {
+    "alto": 0.3533,
+    "bajo": 0.156,
+    "medio": 0.4907
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Programar inspección preventiva y revisar la falla predominante",
+   "input_summary": {
+    "total_events": 93,
+    "unplanned_downtime_min": 305.62,
+    "defect_rate": 0.0286,
+    "recurrences": 2
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M18": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M18",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "alto",
+   "confidence": 0.9019,
+   "probabilities": {
+    "alto": 0.9019,
+    "bajo": 0.029,
+    "medio": 0.069
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Priorizar mantenimiento preventivo antes del siguiente periodo operativo",
+   "input_summary": {
+    "total_events": 117,
+    "unplanned_downtime_min": 514.53,
+    "defect_rate": 0.0483,
+    "recurrences": 5
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M19": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M19",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "medio",
+   "confidence": 0.4666,
+   "probabilities": {
+    "alto": 0.3556,
+    "bajo": 0.1778,
+    "medio": 0.4666
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Programar inspección preventiva y revisar la falla predominante",
+   "input_summary": {
+    "total_events": 92,
+    "unplanned_downtime_min": 321.13,
+    "defect_rate": 0.0297,
+    "recurrences": 2
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M20": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M20",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "bajo",
+   "confidence": 0.5901,
+   "probabilities": {
+    "alto": 0.047,
+    "bajo": 0.5901,
+    "medio": 0.3629
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Mantener operación y supervisión periódica",
+   "input_summary": {
+    "total_events": 82,
+    "unplanned_downtime_min": 189.17,
+    "defect_rate": 0.0223,
+    "recurrences": 2
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M21": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M21",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "medio",
+   "confidence": 0.3994,
+   "probabilities": {
+    "alto": 0.3687,
+    "bajo": 0.2319,
+    "medio": 0.3994
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Programar inspección preventiva y revisar la falla predominante",
+   "input_summary": {
+    "total_events": 97,
+    "unplanned_downtime_min": 238.74,
+    "defect_rate": 0.039,
+    "recurrences": 3
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M22": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M22",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "bajo",
+   "confidence": 0.6768,
+   "probabilities": {
+    "alto": 0.05,
+    "bajo": 0.6768,
+    "medio": 0.2733
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Mantener operación y supervisión periódica",
+   "input_summary": {
+    "total_events": 78,
+    "unplanned_downtime_min": 218.3,
+    "defect_rate": 0.0253,
+    "recurrences": 2
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M23": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M23",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "alto",
+   "confidence": 0.5697,
+   "probabilities": {
+    "alto": 0.5697,
+    "bajo": 0.1736,
+    "medio": 0.2566
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Priorizar mantenimiento preventivo antes del siguiente periodo operativo",
+   "input_summary": {
+    "total_events": 116,
+    "unplanned_downtime_min": 324.28,
+    "defect_rate": 0.0334,
+    "recurrences": 3
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M24": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M24",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "bajo",
+   "confidence": 0.6834,
+   "probabilities": {
+    "alto": 0.0287,
+    "bajo": 0.6834,
+    "medio": 0.288
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Mantener operación y supervisión periódica",
+   "input_summary": {
+    "total_events": 81,
+    "unplanned_downtime_min": 172.61,
+    "defect_rate": 0.0211,
+    "recurrences": 2
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M25": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M25",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "bajo",
+   "confidence": 0.4707,
+   "probabilities": {
+    "alto": 0.1301,
+    "bajo": 0.4707,
+    "medio": 0.3993
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Mantener operación y supervisión periódica",
+   "input_summary": {
+    "total_events": 95,
+    "unplanned_downtime_min": 732.0,
+    "defect_rate": 0.0234,
+    "recurrences": 2
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M26": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M26",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "medio",
+   "confidence": 0.4651,
+   "probabilities": {
+    "alto": 0.2239,
+    "bajo": 0.311,
+    "medio": 0.4651
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Programar inspección preventiva y revisar la falla predominante",
+   "input_summary": {
+    "total_events": 94,
+    "unplanned_downtime_min": 653.81,
+    "defect_rate": 0.0242,
+    "recurrences": 2
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M27": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M27",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "alto",
+   "confidence": 0.9659,
+   "probabilities": {
+    "alto": 0.9659,
+    "bajo": 0.0172,
+    "medio": 0.0169
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Priorizar mantenimiento preventivo antes del siguiente periodo operativo",
+   "input_summary": {
+    "total_events": 131,
+    "unplanned_downtime_min": 367.78,
+    "defect_rate": 0.0502,
+    "recurrences": 5
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M28": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M28",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "medio",
+   "confidence": 0.5559,
+   "probabilities": {
+    "alto": 0.2478,
+    "bajo": 0.1963,
+    "medio": 0.5559
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Programar inspección preventiva y revisar la falla predominante",
+   "input_summary": {
+    "total_events": 89,
+    "unplanned_downtime_min": 384.18,
+    "defect_rate": 0.0317,
+    "recurrences": 3
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M29": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M29",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "medio",
+   "confidence": 0.5204,
+   "probabilities": {
+    "alto": 0.3223,
+    "bajo": 0.1573,
+    "medio": 0.5204
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Programar inspección preventiva y revisar la falla predominante",
+   "input_summary": {
+    "total_events": 92,
+    "unplanned_downtime_min": 324.44,
+    "defect_rate": 0.0335,
+    "recurrences": 2
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  },
+  "M30": {
+   "model": "Random Forest",
+   "scope": "Riesgo histórico mensual del siguiente periodo",
+   "machine_id": "M30",
+   "source_month": "2025-11",
+   "target_month": "2025-12",
+   "predicted_risk": "medio",
+   "confidence": 0.487,
+   "probabilities": {
+    "alto": 0.2805,
+    "bajo": 0.2326,
+    "medio": 0.487
+   },
+   "dominant_failure": "F03",
+   "failure_mode": "Rotura de hilo",
+   "npr": 126,
+   "recommended_action": "Programar inspección preventiva y revisar la falla predominante",
+   "input_summary": {
+    "total_events": 97,
+    "unplanned_downtime_min": 361.68,
+    "defect_rate": 0.0283,
+    "recurrences": 3
+   },
+   "notice": "Resultado preliminar basado en la base reconstruida/sintética 2025."
+  }
+ }
+}

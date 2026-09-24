@@ -8,3 +8,7 @@ pandas
 pillow
 joblib
 scikit-learn==1.8.0
+onnx
+onnxslim
+onnxruntime
+httpx

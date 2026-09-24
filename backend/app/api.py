@@ -160,7 +160,8 @@ async def predict(
             detail="No se pudo interpretar el archivo como imagen.",
         ) from error
 
-    image_array = np.asarray(image)
+    # Ultralytics interpreta los arreglos numpy como BGR (convención de OpenCV).
+    image_array = np.asarray(image)[:, :, ::-1]
     result = model.predict(
         source=image_array,
         conf=conf,
