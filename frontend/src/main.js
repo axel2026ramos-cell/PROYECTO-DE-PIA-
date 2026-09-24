@@ -13,11 +13,18 @@ document.querySelector('#app').innerHTML = `
         </p>
       </div>
 
-      <div class="system-status normal" id="systemStatus">
-        <span class="status-light"></span>
-        <div>
-          <small>ESTADO GENERAL</small>
-          <strong id="systemStatusText">Sistema preparado</strong>
+      <div class="topbar-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false">
+          <span class="theme-toggle-icon" aria-hidden="true"></span>
+          <span class="theme-toggle-text">Modo noche</span>
+        </button>
+
+        <div class="system-status normal" id="systemStatus">
+          <span class="status-light"></span>
+          <div>
+            <small>ESTADO GENERAL</small>
+            <strong id="systemStatusText">Sistema preparado</strong>
+          </div>
         </div>
       </div>
     </header>
@@ -1311,6 +1318,42 @@ const temperatureChart = new Chart(
     options: chartConfiguration
   }
 )
+
+const chartThemes = {
+  light: { text: '#334e68', ticks: '#52677d', grid: 'rgba(72, 104, 135, 0.18)' },
+  dark: { text: '#c3d2e3', ticks: '#8fa2ba', grid: 'rgba(143, 162, 186, 0.16)' }
+}
+
+function applyTheme(theme) {
+  const isDark = theme === 'dark'
+  document.documentElement.dataset.theme = theme
+
+  const toggle = document.querySelector('#themeToggle')
+  toggle.setAttribute('aria-pressed', String(isDark))
+  toggle.querySelector('.theme-toggle-text').textContent =
+    isDark ? 'Modo claro' : 'Modo noche'
+  toggle.title = isDark ? 'Cambiar a modo claro' : 'Cambiar a modo noche'
+
+  const colors = chartThemes[theme]
+  for (const chart of [threadConditionChart, mechanicalChart, temperatureChart]) {
+    chart.options.plugins.legend.labels.color = colors.text
+    for (const axis of ['x', 'y']) {
+      chart.options.scales[axis].ticks.color = colors.ticks
+      chart.options.scales[axis].grid.color = colors.grid
+    }
+    chart.update('none')
+  }
+}
+
+document.querySelector('#themeToggle').addEventListener('click', () => {
+  const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'
+  applyTheme(next)
+  try {
+    localStorage.setItem('dicapri-tema', next)
+  } catch {}
+})
+
+applyTheme(document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light')
 
 function updateCharts() {
   const timeLabel = elements.simulationTime.textContent

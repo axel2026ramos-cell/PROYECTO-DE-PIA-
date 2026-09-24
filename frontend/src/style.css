@@ -1739,12 +1739,12 @@ th {
    TEMA CLARO — PROTOTIPO DICAPRI
    ================================================== */
 
-:root {
+:where(:root:not([data-theme="dark"])) {
   color: #172033;
   background: #eef3f8;
 }
 
-body {
+:where(:root:not([data-theme="dark"])) body {
   color: #172033;
   background:
     radial-gradient(
@@ -1753,193 +1753,193 @@ body {
       transparent 35%
     ),
     #eef3f8;
-}
+}/* Paneles principales */
 
-/* Paneles principales */
 
-.panel,
-.system-status,
-.decision-strip > div,
-.sensor-card,
-.machine-selector-card,
-.data-summary-card,
-.metric-card,
-.chart-card,
-.amef-scenario-card,
-.visual-viewer,
-.visual-controls,
-.visual-result,
-.risk-summary-card,
-.risk-detail-card,
-.risk-probability-card,
-.risk-action-card,
-.decision-evidence-card,
-.decision-output-card,
-.autonomous-control-card,
-.visual-batch-card,
-.baseline-strip > div {
+
+:where(:root:not([data-theme="dark"])) .panel,
+:where(:root:not([data-theme="dark"])) .system-status,
+:where(:root:not([data-theme="dark"])) .decision-strip > div,
+:where(:root:not([data-theme="dark"])) .sensor-card,
+:where(:root:not([data-theme="dark"])) .machine-selector-card,
+:where(:root:not([data-theme="dark"])) .data-summary-card,
+:where(:root:not([data-theme="dark"])) .metric-card,
+:where(:root:not([data-theme="dark"])) .chart-card,
+:where(:root:not([data-theme="dark"])) .amef-scenario-card,
+:where(:root:not([data-theme="dark"])) .visual-viewer,
+:where(:root:not([data-theme="dark"])) .visual-controls,
+:where(:root:not([data-theme="dark"])) .visual-result,
+:where(:root:not([data-theme="dark"])) .risk-summary-card,
+:where(:root:not([data-theme="dark"])) .risk-detail-card,
+:where(:root:not([data-theme="dark"])) .risk-probability-card,
+:where(:root:not([data-theme="dark"])) .risk-action-card,
+:where(:root:not([data-theme="dark"])) .decision-evidence-card,
+:where(:root:not([data-theme="dark"])) .decision-output-card,
+:where(:root:not([data-theme="dark"])) .autonomous-control-card,
+:where(:root:not([data-theme="dark"])) .visual-batch-card,
+:where(:root:not([data-theme="dark"])) .baseline-strip > div {
   color: #172033;
   border-color: #c8d5e3;
   background: #ffffff;
   box-shadow: 0 8px 22px rgba(29, 55, 83, 0.08);
-}
+}/* Títulos y texto principal */
 
-/* Títulos y texto principal */
 
-h1,
-h2,
-h3,
-.system-status strong,
-.sensor-card strong,
-.event-main,
-.metric-card strong,
-.data-summary-card strong,
-.machine-selector-card strong,
-.amef-data-grid strong,
-.risk-detail-card strong,
-.risk-probability-row strong,
-.decision-output-card strong,
-.visual-result strong,
-.visual-placeholder strong,
-.visual-batch-heading strong {
+
+:where(:root:not([data-theme="dark"])) h1,
+:where(:root:not([data-theme="dark"])) h2,
+:where(:root:not([data-theme="dark"])) h3,
+:where(:root:not([data-theme="dark"])) .system-status strong,
+:where(:root:not([data-theme="dark"])) .sensor-card strong,
+:where(:root:not([data-theme="dark"])) .event-main,
+:where(:root:not([data-theme="dark"])) .metric-card strong,
+:where(:root:not([data-theme="dark"])) .data-summary-card strong,
+:where(:root:not([data-theme="dark"])) .machine-selector-card strong,
+:where(:root:not([data-theme="dark"])) .amef-data-grid strong,
+:where(:root:not([data-theme="dark"])) .risk-detail-card strong,
+:where(:root:not([data-theme="dark"])) .risk-probability-row strong,
+:where(:root:not([data-theme="dark"])) .decision-output-card strong,
+:where(:root:not([data-theme="dark"])) .visual-result strong,
+:where(:root:not([data-theme="dark"])) .visual-placeholder strong,
+:where(:root:not([data-theme="dark"])) .visual-batch-heading strong {
   color: #172033;
-}
+}/* Textos secundarios */
 
-/* Textos secundarios */
 
-.subtitle,
-.panel-heading p,
-.field-label,
-.system-status small,
-.decision-strip small,
-.simulation-time small,
-.sensor-card small,
-.sensor-card p,
-.event-sub,
-.metric-card small,
-.data-summary-card small,
-.machine-selector-card small,
-.amef-data-grid small,
-.amef-action small,
-.visual-scope-note,
-.visual-disclaimer,
-.visual-controls label:not(.file-button),
-.visual-result small,
-.visual-result p,
-.risk-summary-card small,
-.risk-summary-card p,
-.risk-detail-card span,
-.risk-probability-card > small,
-.risk-probability-row,
-.risk-action-card small,
-.risk-action-card p,
-.risk-action-card > span,
-.decision-evidence-card small,
-.decision-evidence-card p,
-.decision-output-card small,
-.decision-output-card p,
-.decision-output-card > span,
-.autonomous-check,
-.visual-batch-heading small,
-.visual-batch-card > label,
-.visual-batch-counters {
+
+:where(:root:not([data-theme="dark"])) .subtitle,
+:where(:root:not([data-theme="dark"])) .panel-heading p,
+:where(:root:not([data-theme="dark"])) .field-label,
+:where(:root:not([data-theme="dark"])) .system-status small,
+:where(:root:not([data-theme="dark"])) .decision-strip small,
+:where(:root:not([data-theme="dark"])) .simulation-time small,
+:where(:root:not([data-theme="dark"])) .sensor-card small,
+:where(:root:not([data-theme="dark"])) .sensor-card p,
+:where(:root:not([data-theme="dark"])) .event-sub,
+:where(:root:not([data-theme="dark"])) .metric-card small,
+:where(:root:not([data-theme="dark"])) .data-summary-card small,
+:where(:root:not([data-theme="dark"])) .machine-selector-card small,
+:where(:root:not([data-theme="dark"])) .amef-data-grid small,
+:where(:root:not([data-theme="dark"])) .amef-action small,
+:where(:root:not([data-theme="dark"])) .visual-scope-note,
+:where(:root:not([data-theme="dark"])) .visual-disclaimer,
+:where(:root:not([data-theme="dark"])) .visual-controls label:not(.file-button),
+:where(:root:not([data-theme="dark"])) .visual-result small,
+:where(:root:not([data-theme="dark"])) .visual-result p,
+:where(:root:not([data-theme="dark"])) .risk-summary-card small,
+:where(:root:not([data-theme="dark"])) .risk-summary-card p,
+:where(:root:not([data-theme="dark"])) .risk-detail-card span,
+:where(:root:not([data-theme="dark"])) .risk-probability-card > small,
+:where(:root:not([data-theme="dark"])) .risk-probability-row,
+:where(:root:not([data-theme="dark"])) .risk-action-card small,
+:where(:root:not([data-theme="dark"])) .risk-action-card p,
+:where(:root:not([data-theme="dark"])) .risk-action-card > span,
+:where(:root:not([data-theme="dark"])) .decision-evidence-card small,
+:where(:root:not([data-theme="dark"])) .decision-evidence-card p,
+:where(:root:not([data-theme="dark"])) .decision-output-card small,
+:where(:root:not([data-theme="dark"])) .decision-output-card p,
+:where(:root:not([data-theme="dark"])) .decision-output-card > span,
+:where(:root:not([data-theme="dark"])) .autonomous-check,
+:where(:root:not([data-theme="dark"])) .visual-batch-heading small,
+:where(:root:not([data-theme="dark"])) .visual-batch-card > label,
+:where(:root:not([data-theme="dark"])) .visual-batch-counters {
   color: #52677d;
-}
+}/* Selectores */
 
-/* Selectores */
 
-select {
+
+:where(:root:not([data-theme="dark"])) select {
   color: #172033;
   border-color: #aebfd0;
   background: #ffffff;
 }
 
-select:focus {
+:where(:root:not([data-theme="dark"])) select:focus {
   border-color: #0284c7;
   box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12);
-}
+}/* Botones */
 
-/* Botones */
 
-.primary,
-.visual-analyze-button {
+
+:where(:root:not([data-theme="dark"])) .primary,
+:where(:root:not([data-theme="dark"])) .visual-analyze-button {
   color: #ffffff;
   background: #0284c7;
 }
 
-.secondary {
+:where(:root:not([data-theme="dark"])) .secondary {
   color: #16456e;
   background: #dcecf9;
 }
 
-.outline {
+:where(:root:not([data-theme="dark"])) .outline {
   color: #24445f;
   border-color: #9fb4c8;
   background: #ffffff;
 }
 
-.button:disabled {
+:where(:root:not([data-theme="dark"])) .button:disabled {
   color: #788898;
   background: #d9e1e8;
   opacity: 1;
-}
+}/* AMEF */
 
-/* AMEF */
 
-.amef-scenario-card {
+
+:where(:root:not([data-theme="dark"])) .amef-scenario-card {
   border-color: #b9cad9;
   background: #f8fafc;
 }
 
-.amef-title {
+:where(:root:not([data-theme="dark"])) .amef-title {
   border-bottom-color: #c5d3df;
 }
 
-.amef-title span {
+:where(:root:not([data-theme="dark"])) .amef-title span {
   color: #0369a1;
 }
 
-.amef-title strong {
+:where(:root:not([data-theme="dark"])) .amef-title strong {
   color: #b77900;
 }
 
-.amef-data-grid small,
-.amef-action small {
+:where(:root:not([data-theme="dark"])) .amef-data-grid small,
+:where(:root:not([data-theme="dark"])) .amef-action small {
   color: #52677d;
 }
 
-.amef-data-grid strong {
+:where(:root:not([data-theme="dark"])) .amef-data-grid strong {
   color: #172033;
 }
 
-.amef-action {
+:where(:root:not([data-theme="dark"])) .amef-action {
   border-top-color: #c5d3df;
 }
 
-.amef-action strong {
+:where(:root:not([data-theme="dark"])) .amef-action strong {
   color: #00875a;
-}
+}/* Sensores */
 
-/* Sensores */
 
-.sensor-icon {
+
+:where(:root:not([data-theme="dark"])) .sensor-icon {
   color: #0369a1;
   background: #dbeefe;
 }
 
-.sensor-card.warning {
+:where(:root:not([data-theme="dark"])) .sensor-card.warning {
   border-color: #d99b00;
   background: #fffaf0;
 }
 
-.sensor-card.critical {
+:where(:root:not([data-theme="dark"])) .sensor-card.critical {
   border-color: #dc3545;
   background: #fff5f5;
-}
+}/* Inspección visual */
 
-/* Inspección visual */
 
-.visual-preview {
+
+:where(:root:not([data-theme="dark"])) .visual-preview {
   border-color: #adc2d5;
   background:
     linear-gradient(rgba(34, 88, 128, 0.06) 1px, transparent 1px),
@@ -1947,164 +1947,164 @@ select:focus {
     #edf4fa;
 }
 
-.visual-placeholder {
+:where(:root:not([data-theme="dark"])) .visual-placeholder {
   color: #52677d;
 }
 
-.file-button {
+:where(:root:not([data-theme="dark"])) .file-button {
   color: #0369a1;
   border-color: #0284c7;
   background: #ffffff;
 }
 
-.visual-result {
+:where(:root:not([data-theme="dark"])) .visual-result {
   background: #f8fafc;
-}
+}/* Historial */
 
-/* Historial */
 
-.event-table-wrapper {
+
+:where(:root:not([data-theme="dark"])) .event-table-wrapper {
   border-color: #c8d5e3;
 }
 
-table {
+:where(:root:not([data-theme="dark"])) table {
   color: #172033;
 }
 
-thead {
+:where(:root:not([data-theme="dark"])) thead {
   background: #dce9f5;
 }
 
-th {
+:where(:root:not([data-theme="dark"])) th {
   color: #365069;
 }
 
-td {
+:where(:root:not([data-theme="dark"])) td {
   color: #172033;
   border-color: #d9e2eb;
-}
+}/* Tarjetas de riesgo y decisión */
 
-/* Tarjetas de riesgo y decisión */
 
-.risk-summary-card,
-.risk-detail-card,
-.risk-probability-card,
-.risk-action-card,
-.decision-evidence-card,
-.decision-output-card {
+
+:where(:root:not([data-theme="dark"])) .risk-summary-card,
+:where(:root:not([data-theme="dark"])) .risk-detail-card,
+:where(:root:not([data-theme="dark"])) .risk-probability-card,
+:where(:root:not([data-theme="dark"])) .risk-action-card,
+:where(:root:not([data-theme="dark"])) .decision-evidence-card,
+:where(:root:not([data-theme="dark"])) .decision-output-card {
   background: #f8fafc;
 }
 
-.risk-detail-card div {
+:where(:root:not([data-theme="dark"])) .risk-detail-card div {
   border-bottom-color: #d2dde7;
-}
+}/* Advertencia de datos reconstruidos */
 
-/* Advertencia de datos reconstruidos */
 
-.synthetic-warning {
+
+:where(:root:not([data-theme="dark"])) .synthetic-warning {
   color: #604b13;
   border-left-color: #d99b00;
   background: #fff7dc;
-}
+}/* Separadores */
 
-/* Separadores */
 
-.automatic-control,
-.amef-action,
-.autonomous-status-row,
-.visual-batch-counters {
+
+:where(:root:not([data-theme="dark"])) .automatic-control,
+:where(:root:not([data-theme="dark"])) .amef-action,
+:where(:root:not([data-theme="dark"])) .autonomous-status-row,
+:where(:root:not([data-theme="dark"])) .visual-batch-counters {
   border-color: #cbd7e2;
-}
-/* Fondo general claro — debe permanecer al final del archivo */
+}/* Fondo general claro — debe permanecer al final del archivo */
 
-html,
-body,
-#app,
-.app-shell {
+
+:where(:root:not([data-theme="dark"])),
+:where(:root:not([data-theme="dark"])) body,
+:where(:root:not([data-theme="dark"])) #app,
+:where(:root:not([data-theme="dark"])) .app-shell {
   background-color: #eef3f8 !important;
   background-image: none !important;
   color: #172033 !important;
 }
 
-body {
+:where(:root:not([data-theme="dark"])) body {
   min-height: 100vh;
-}
-/* Tarjetas históricas por máquina — tema claro */
+}/* Tarjetas históricas por máquina — tema claro */
 
-.machine-selector-card,
-.historical-kpi-card {
+
+:where(:root:not([data-theme="dark"])) .machine-selector-card,
+:where(:root:not([data-theme="dark"])) .historical-kpi-card {
   color: #172033 !important;
   border: 1px solid #b9c9d8 !important;
   background: #ffffff !important;
   box-shadow: 0 5px 14px rgba(31, 78, 120, 0.08);
-}
+}/* Encabezados pequeños */
 
-/* Encabezados pequeños */
 
-.machine-description small,
-.historical-kpi-card small {
+
+:where(:root:not([data-theme="dark"])) .machine-description small,
+:where(:root:not([data-theme="dark"])) .historical-kpi-card small {
   color: #52677d !important;
-}
+}/* Valores principales */
 
-/* Valores principales */
 
-.historical-kpi-card strong {
+
+:where(:root:not([data-theme="dark"])) .historical-kpi-card strong {
   color: #0284c7 !important;
-}
+}/* Porcentaje de defectos */
 
-/* Porcentaje de defectos */
 
-.historical-kpi-card.critical strong {
+
+:where(:root:not([data-theme="dark"])) .historical-kpi-card.critical strong {
   color: #dc3545 !important;
-}
+}/* Descripciones inferiores */
 
-/* Descripciones inferiores */
 
-.historical-kpi-card p {
+
+:where(:root:not([data-theme="dark"])) .historical-kpi-card p {
   color: #64748b !important;
-}
+}/* Información de la máquina seleccionada */
 
-/* Información de la máquina seleccionada */
 
-.machine-description strong {
+
+:where(:root:not([data-theme="dark"])) .machine-description strong {
   color: #172033 !important;
 }
-.historical-kpi-card {
+:where(:root:not([data-theme="dark"])) .historical-kpi-card {
   background: #ffffff !important;
   color: #172033 !important;
   border: 1px solid #b9c9d8 !important;
   box-shadow: 0 4px 12px rgba(31, 78, 120, 0.08);
 }
 
-.historical-kpi-card small {
+:where(:root:not([data-theme="dark"])) .historical-kpi-card small {
   color: #52677d !important;
 }
 
-.historical-kpi-card strong {
+:where(:root:not([data-theme="dark"])) .historical-kpi-card strong {
   color: #0284c7 !important;
 }
 
-.historical-kpi-card.critical strong {
+:where(:root:not([data-theme="dark"])) .historical-kpi-card.critical strong {
   color: #dc3545 !important;
 }
 
-.historical-kpi-card p {
+:where(:root:not([data-theme="dark"])) .historical-kpi-card p {
   color: #64748b !important;
-}
-/* Textos del banco experimental */
-.tension-sensor small,
-.servo small,
-.optical-sensor small,
-.weaving-unit small {
+}/* Textos del banco experimental */
+
+:where(:root:not([data-theme="dark"])) .tension-sensor small,
+:where(:root:not([data-theme="dark"])) .servo small,
+:where(:root:not([data-theme="dark"])) .optical-sensor small,
+:where(:root:not([data-theme="dark"])) .weaving-unit small {
   color: #e8eef8 !important;
   font-weight: 700;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
-}
-/* =====================================================
+}/* =====================================================
    BANCO EXPERIMENTAL: DISEÑO CLARO Y DINÁMICO
 ===================================================== */
 
-.process-stage {
+
+:where(:root:not([data-theme="dark"])) .process-stage {
   border: 1px solid #9ec5e5 !important;
   background-color: #f4f9fd !important;
   background-image:
@@ -2114,25 +2114,25 @@ body {
   box-shadow:
     inset 0 0 30px rgba(14, 165, 233, 0.06),
     0 5px 16px rgba(31, 78, 120, 0.10);
-}
+}/* Encabezados de las zonas */
 
-/* Encabezados de las zonas */
-.machine-label {
+
+:where(:root:not([data-theme="dark"])) .machine-label {
   color: #0369a1 !important;
   padding: 5px 9px;
   border: 1px solid #bae6fd;
   border-radius: 6px;
   background: #e0f2fe;
   font-weight: 800;
-}
+}/* Mejor definición de todos los componentes */
 
-/* Mejor definición de todos los componentes */
-.machine-part {
+
+:where(:root:not([data-theme="dark"])) .machine-part {
   filter: drop-shadow(0 5px 5px rgba(15, 23, 42, 0.20));
-}
+}/* Bobina */
 
-/* Bobina */
-.spool {
+
+:where(:root:not([data-theme="dark"])) .spool {
   border-color: #0284c7 !important;
   background: repeating-linear-gradient(
     0deg,
@@ -2143,100 +2143,100 @@ body {
   ) !important;
 }
 
-.spool-core {
+:where(:root:not([data-theme="dark"])) .spool-core {
   background: #334155 !important;
-}
+}/* Rodillo guía */
 
-/* Rodillo guía */
-.roller {
+
+:where(:root:not([data-theme="dark"])) .roller {
   border-color: #64748b !important;
   background: #dbeafe !important;
 }
 
-.roller-center {
+:where(:root:not([data-theme="dark"])) .roller-center {
   background: #0ea5e9 !important;
   box-shadow: 0 0 10px rgba(14, 165, 233, 0.7);
-}
+}/* Sensor de tensión */
 
-/* Sensor de tensión */
-.tension-sensor {
+
+:where(:root:not([data-theme="dark"])) .tension-sensor {
   border-color: #0284c7 !important;
   background: #e0f2fe !important;
 }
 
-.tension-sensor span {
+:where(:root:not([data-theme="dark"])) .tension-sensor span {
   color: #075985 !important;
-}
+}/* Servotensor */
 
-/* Servotensor */
-.servo {
+
+:where(:root:not([data-theme="dark"])) .servo {
   background: #f59e0b !important;
   border: 2px solid #b45309;
 }
 
-.servo-arm {
+:where(:root:not([data-theme="dark"])) .servo-arm {
   background: #facc15 !important;
   box-shadow: 0 0 8px rgba(250, 204, 21, 0.65);
-}
+}/* Sensor óptico */
 
-/* Sensor óptico */
-.optical-sensor {
+
+:where(:root:not([data-theme="dark"])) .optical-sensor {
   left: 445px !important;
   background: #fce7f3 !important;
   border: 2px solid #db2777;
   z-index: 4;
 }
 
-.optical-sensor span {
+:where(:root:not([data-theme="dark"])) .optical-sensor span {
   background: #ec4899 !important;
   box-shadow: 0 0 13px #ec4899 !important;
-}
+}/* Unidad representativa de tejido */
 
-/* Unidad representativa de tejido */
-.weaving-unit {
+
+:where(:root:not([data-theme="dark"])) .weaving-unit {
   right: 18px !important;
   width: 100px !important;
   border-color: #64748b !important;
   background: #e2e8f0 !important;
 }
 
-.weaving-wheel {
+:where(:root:not([data-theme="dark"])) .weaving-wheel {
   border-color: #475569 !important;
   background: #f8fafc;
-}
+}/* Nombres de los componentes */
 
-/* Nombres de los componentes */
-.tension-sensor small,
-.optical-sensor small,
-.weaving-unit small {
+
+:where(:root:not([data-theme="dark"])) .tension-sensor small,
+:where(:root:not([data-theme="dark"])) .optical-sensor small,
+:where(:root:not([data-theme="dark"])) .weaving-unit small {
   color: #172033 !important;
   font-weight: 800;
 }
 
-.servo small {
+:where(:root:not([data-theme="dark"])) .servo small {
   color: #7c2d12 !important;
   font-weight: 800;
   text-shadow: none !important;
-}
+}/* Hilo más visible */
 
-/* Hilo más visible */
-.thread {
+
+:where(:root:not([data-theme="dark"])) .thread {
   height: 4px !important;
   background: #0284c7 !important;
   box-shadow:
     0 0 5px rgba(2, 132, 199, 0.70),
     0 0 10px rgba(14, 165, 233, 0.35) !important;
   animation: threadFlow 1.2s infinite alternate;
-}
+}/* Flechas de avance */
 
-/* Flechas de avance */
-.flow-arrow {
+
+:where(:root:not([data-theme="dark"])) .flow-arrow {
   color: #0284c7 !important;
   font-weight: 900;
   text-shadow: 0 0 7px rgba(14, 165, 233, 0.35);
-}
+}/* Animación del recorrido */
 
-/* Animación del recorrido */
+
 @keyframes threadFlow {
   from {
     opacity: 0.60;
@@ -2249,12 +2249,12 @@ body {
       0 0 7px rgba(2, 132, 199, 0.85),
       0 0 13px rgba(14, 165, 233, 0.45);
   }
-}
-/* =====================================================
+}/* =====================================================
    TARJETA: TIEMPO DE OPERACIÓN
 ===================================================== */
 
-.simulation-time {
+
+:where(:root:not([data-theme="dark"])) .simulation-time {
   position: relative;
   overflow: hidden;
   margin-top: 22px;
@@ -2271,10 +2271,10 @@ body {
   box-shadow:
     inset 0 0 18px rgba(14, 165, 233, 0.06),
     0 5px 14px rgba(31, 78, 120, 0.10);
-}
+}/* Línea superior decorativa */
 
-/* Línea superior decorativa */
-.simulation-time::before {
+
+:where(:root:not([data-theme="dark"])) .simulation-time::before {
   position: absolute;
   top: 0;
   right: 0;
@@ -2287,10 +2287,10 @@ body {
     #22c55e
   );
   content: "";
-}
+}/* Título */
 
-/* Título */
-.simulation-time small {
+
+:where(:root:not([data-theme="dark"])) .simulation-time small {
   display: flex !important;
   align-items: center;
   justify-content: center;
@@ -2300,20 +2300,20 @@ body {
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 0.12em;
-}
+}/* Indicador verde de operación */
 
-/* Indicador verde de operación */
-.simulation-time small::before {
+
+:where(:root:not([data-theme="dark"])) .simulation-time small::before {
   width: 7px;
   height: 7px;
   border-radius: 50%;
   background: #22c55e;
   box-shadow: 0 0 7px rgba(34, 197, 94, 0.8);
   content: "";
-}
+}/* Cronómetro */
 
-/* Cronómetro */
-.simulation-time strong {
+
+:where(:root:not([data-theme="dark"])) .simulation-time strong {
   display: block;
   color: #0f3f67 !important;
   font-family: Manrope, sans-serif;
@@ -2321,28 +2321,28 @@ body {
   font-weight: 800;
   letter-spacing: 0.08em;
   text-shadow: 0 1px 2px rgba(15, 63, 103, 0.12);
-}
-/* Sensor virtual de RPM */
-#speedCard .sensor-icon {
+}/* Sensor virtual de RPM */
+
+:where(:root:not([data-theme="dark"])) #speedCard .sensor-icon {
   color: #0369a1 !important;
   border: 1px solid #7dd3fc;
   background: #e0f2fe !important;
   font-size: 22px;
 }
 
-#speedCard.normal .sensor-icon {
+:where(:root:not([data-theme="dark"])) #speedCard.normal .sensor-icon {
   color: #047857 !important;
   border-color: #6ee7b7;
   background: #d1fae5 !important;
 }
 
-#speedCard.warning .sensor-icon {
+:where(:root:not([data-theme="dark"])) #speedCard.warning .sensor-icon {
   color: #b45309 !important;
   border-color: #fcd34d;
   background: #fef3c7 !important;
 }
 
-#speedCard.critical .sensor-icon {
+:where(:root:not([data-theme="dark"])) #speedCard.critical .sensor-icon {
   color: #be123c !important;
   border-color: #fda4af;
   background: #ffe4e6 !important;
@@ -2540,4 +2540,106 @@ body {
   h1 {
     font-size: 22px;
   }
+}
+
+/* =====================================================
+   BOTONES DE REGISTROS Y SELECTOR DE TEMA
+===================================================== */
+
+.metrics-actions {
+  flex-wrap: wrap;
+  gap: 12px 16px;
+}
+
+.metrics-actions p {
+  flex: 1 1 260px;
+}
+
+.metrics-actions .button {
+  flex: 0 1 auto;
+  width: auto !important;
+  min-width: 190px;
+}
+
+.topbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  gap: 9px;
+  align-items: center;
+  padding: 11px 16px;
+  border: 1px solid #23354d;
+  border-radius: 999px;
+  color: #e8eef8;
+  background: rgba(14, 28, 47, 0.88);
+  font: 700 13px Inter, system-ui, sans-serif;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.theme-toggle:hover {
+  border-color: #38bdf8;
+}
+
+.theme-toggle:active {
+  transform: scale(0.97);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+.theme-toggle-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fbbf24;
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.7);
+}
+
+:where(:root:not([data-theme="dark"])) .theme-toggle {
+  border-color: #c9d8e8;
+  color: #172033;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(31, 78, 120, 0.08);
+}
+
+:where(:root:not([data-theme="dark"])) .theme-toggle:hover {
+  border-color: #0284c7;
+}
+
+:where(:root:not([data-theme="dark"])) .theme-toggle-icon {
+  background: transparent;
+  box-shadow: inset -5px -3px 0 0 #334e68;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle {
+    transition: none;
+  }
+}
+
+/* =====================================================
+   MODO NOCHE
+===================================================== */
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  background: #07111f;
+}
+
+:root[data-theme="dark"] body {
+  background:
+    radial-gradient(circle at 20% 0%, rgba(22, 101, 170, 0.22), transparent 35%),
+    #07111f;
+}
+
+:root[data-theme="dark"] .amef-scenario-card {
+  background: #0c1a2c;
 }
