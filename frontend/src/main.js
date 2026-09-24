@@ -174,6 +174,10 @@ document.querySelector('#app').innerHTML = `
               <input type="checkbox" id="autonomousYolo" checked>
               <span>Analizar automáticamente la fotografía seleccionada</span>
             </label>
+            <p class="autonomous-hint">
+              En cada ciclo el sistema induce un escenario al azar. También puedes
+              elegir uno abajo y pulsar «Inducir escenario».
+            </p>
             <div class="autonomous-status-row">
               <span id="autonomousState">Detenido</span>
               <strong id="autonomousCycles">0 ciclos</strong>
@@ -731,6 +735,8 @@ let correctionInProgress = false
 let autonomousTimer = null
 let autonomousCycleInProgress = false
 let autonomousCycleCount = 0
+let autonomousNextAt = 0
+let autonomousPhase = 'Detenido'
 
 function scheduleCorrection(callback, delay) {
   const timerId = setTimeout(callback, delay)
@@ -2788,6 +2794,7 @@ function startSimulation() {
     updateTimer()
     updateValues()
     updateCharts()
+    updateAutonomousCountdown()
   }, 1000)
 
   if (elements.operationMode.value === 'autonomous') {
@@ -2845,7 +2852,28 @@ function resetSimulation() {
 }
 
 function setAutonomousState(text) {
+  autonomousPhase = text
   elements.autonomousState.textContent = text
+}
+
+function updateAutonomousCountdown() {
+  if (!autonomousTimer || autonomousCycleInProgress) return
+  const remaining = Math.max(0, Math.ceil((autonomousNextAt - Date.now()) / 1000))
+  elements.autonomousState.textContent =
+    `${autonomousPhase} · próximo escenario en ${remaining} s`
+}
+
+function autonomousIntervalSeconds() {
+  return Number(elements.autonomousInterval.value) || 25
+}
+
+function induceSelectedScenario() {
+  applyScenario()
+
+  if (running && elements.operationMode.value === 'autonomous') {
+    setAutonomousState(`Manual: ${scenarioLabels[currentScenario] ?? currentScenario}`)
+    scheduleNextAutonomousCycle(autonomousIntervalSeconds())
+  }
 }
 
 function stopAutonomousScheduler(state = 'Detenido') {
@@ -2892,7 +2920,9 @@ function selectAutonomousScenario() {
 
 function scheduleNextAutonomousCycle(delaySeconds) {
   clearTimeout(autonomousTimer)
+  autonomousNextAt = Date.now() + delaySeconds * 1000
   autonomousTimer = setTimeout(runAutonomousCycle, delaySeconds * 1000)
+  updateAutonomousCountdown()
 }
 
 async function runAutonomousCycle() {
@@ -2938,9 +2968,7 @@ async function runAutonomousCycle() {
   } finally {
     autonomousCycleInProgress = false
     if (running && elements.operationMode.value === 'autonomous') {
-      scheduleNextAutonomousCycle(
-        Number(elements.autonomousInterval.value) || 25
-      )
+      scheduleNextAutonomousCycle(autonomousIntervalSeconds())
     }
   }
 }
@@ -2954,8 +2982,6 @@ function startAutonomousScheduler() {
 function updateOperationMode() {
   const autonomous = elements.operationMode.value === 'autonomous'
   elements.autonomousOptions.classList.toggle('visible', autonomous)
-  elements.scenarioSelect.disabled = autonomous
-  elements.applyScenarioButton.disabled = autonomous
   elements.startButton.textContent = autonomous
     ? 'Iniciar ciclo autónomo'
     : 'Iniciar operación'
@@ -2986,7 +3012,7 @@ function clearEventHistory() {
 elements.startButton.addEventListener('click', startSimulation)
 elements.pauseButton.addEventListener('click', pauseSimulation)
 elements.resetButton.addEventListener('click', resetSimulation)
-elements.applyScenarioButton.addEventListener('click', applyScenario)
+elements.applyScenarioButton.addEventListener('click', induceSelectedScenario)
 elements.exportButton.addEventListener('click', exportCsv)
 elements.clearHistoryButton.addEventListener('click', clearEventHistory)
 elements.visualImageInput.addEventListener('change', loadVisualImage)
